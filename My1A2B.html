@@ -1,0 +1,65 @@
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="數字遊戲">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/js.js"></script>
+	<script src="js/1A2B.js"></script>
+    <title>1A2B</title>
+	<style>
+	.picdiv{
+			width: 70px;
+			height: 300px; 
+			background: #fff;
+			overflow:scroll;
+			float:left; 
+			padding: 5px;
+			position: absolute;
+			top: 25px;
+			left: 200px;
+		}
+	body, input{
+		font-family:Comic Sans MS;
+	}
+	
+	</style>
+	
+</head>
+<body>
+	<div align="center"  style="position: relative; top: 50px">
+		<img src="img/one.png" width="80px" height="80px">
+		<img src="img/A.png" width="80px" height="80px">
+		<img src="img/two.png" width="80px" height="80px">
+		<img src="img/B.png" width="80px" height="80px">
+	</div>
+	<form name='fm' align="center" style="position: relative; top: 100px">
+		GUESS：
+		<input type='text' name='Guess' size='5' maxlength='4'>
+		<input id = "GO" type='button' value='GO' onClick='javascript:doGuess(document.fm)'>
+		
+		<br><br>RECORD：
+		<br><br><textarea name='Hint' rows='10' readonly></textarea>
+		<br>
+		<br>
+		<div align="center">
+		<img id="first" src="img/question-mark.png" width="50px" height="50px">
+		<img id="second" src="img/question-mark.png" width="50px" height="50px">
+		<img id="third" src="img/question-mark.png" width="50px" height="50px">
+		<img id="forth" src="img/question-mark.png" width="50px" height="50px">
+		</div>
+
+		
+		<div id = "disfirst" style = "display: none;" class = "picdiv" align="center"></div>
+		<div id = "dissecond" style = "display: none;" class = "picdiv" align="center"></div>
+		<div id = "disthird" style = "display: none;" class = "picdiv" align="center"></div>
+		<div id = "disforth" style = "display: none;" class = "picdiv" align="center"></div>
+		
+		<br>USED TIME：<span id="timer" align = "center">0</span>
+		<br><br>ANSWER：<input type='text' name='Answer' size='5' maxlength='4' style='border:0' readonly><br><br>
+		
+		<!-- <input type='reset' value='RESET'> -->
+		<input type='button' value='ANSWER' onClick='javascript:doAnswer(document.fm, false)'>
+		<input id = "REPLAY" type='button' value='REPLAY' onClick='javascript:doReplay(document.fm)' disabled>
+		
+	</form>
+</body>
+</html>
