@@ -87,7 +87,7 @@ function doGuess(form) {
 		clearInterval(myVar);
 		document.fm.Answer.value = gsAnswer;
 		$('#REPLAY').attr('disabled', false);
-		
+		$('#GO').attr('disabled', true);
 		HistoryTime.push(timerN-1);
 		var sTime = (timerN - 1) + "秒\n" ;
 		form.History.value += sTime;
@@ -124,6 +124,7 @@ function doReplay(form) {
 	
 	startFunction();
 	$('#REPLAY').attr('disabled', true);
+	$('#GO').attr('disabled', false);
 	//timerN = 0;
 	
 	//window.location.reload();
