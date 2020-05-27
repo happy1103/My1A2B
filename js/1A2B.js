@@ -3,6 +3,8 @@ var gsAnswer = "";
 var giCount = 0;
 var gbCheck = true;
 
+var HistoryTime = [];
+
 // 產生新數字
 function doNewnum() {
     var sNew = "";
@@ -35,7 +37,7 @@ function doCheckDu(str) {
 // 開始猜
 function doGuess(form) {
     // 猜50次後自動顯示答案
-    if (giCount>=50) gbCheck = false;
+    //if (giCount>=50) gbCheck = false;
 
     // 已顯示答案者，就重新計算
     /*if (!gbCheck) {
@@ -85,12 +87,19 @@ function doGuess(form) {
 		clearInterval(myVar);
 		document.fm.Answer.value = gsAnswer;
 		$('#REPLAY').attr('disabled', false);
+		
+		HistoryTime.push(timerN-1);
+		var sTime = (timerN - 1) + "秒\n" ;
+		form.History.value += sTime;
+		stopFunction();
+		timerN = 0; 
     }
 
     // 將游標移到輸入格內
     try {
         form.Guess.select();
         form.Guess.focus();
+		form.Guess.value = "";
     } catch (ex) {}
 }
 
@@ -112,20 +121,68 @@ function doReplay(form) {
 	document.getElementById("second").setAttribute("src", "img/question-mark.png");
 	document.getElementById("third").setAttribute("src", "img/question-mark.png");
 	document.getElementById("forth").setAttribute("src", "img/question-mark.png");
-	timerN = 0;
 	
-	window.location.reload();
+	startFunction();
+	$('#REPLAY').attr('disabled', true);
+	//timerN = 0;
+	
+	//window.location.reload();
 }
-
+/*
 var myVar = setInterval(function(){ myTimer() }, 1000);
 var timerN = 1;
 
 function myTimer() {
+	
 	var d = new Date();
 	var t = d.toLocaleTimeString();
 	document.getElementById("timer").innerHTML = timerN;
 	timerN = timerN + 1;
 }
+*/
 
+var timerN = 1; 
 
+function myTimer() 
+{ 
+    document.getElementById("timer").innerHTML = timerN; 
+	timerN = timerN + 1;
+} 
+
+var myVar = setInterval(myTimer, 1000); 
+
+function stopFunction() 
+{ 
+    clearInterval(myVar); 
+} 
+
+function startFunction()
+{ 
+    document.getElementById("timer").innerHTML = timerN; 
+
+    //Restart it here 
+    myVar = setInterval(myTimer, 1000); 
+} 
+
+/*
+var sec = 10; 
+var timer; 
+
+function startCountdown() { 
+    if (timer) clearInterval(timer); 
+    sec = 10; 
+
+    timer = setInterval(function() { 
+     $('#timer').text(sec--); 
+     if (sec == -1) { 
+      clearInterval(timer); 
+     } 
+    }, 1000); 
+} 
+
+$(function() { 
+    startCountdown(); 
+    $("#recount").click(startCountdown); 
+}); 
+*/
 doReplay(document.fm);
