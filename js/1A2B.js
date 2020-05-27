@@ -99,7 +99,12 @@ function doGuess(form) {
     try {
         form.Guess.select();
         form.Guess.focus();
-		form.Guess.value = "";
+	form.Guess.value = "";
+    	var textarea = document.getElementById('textarea_id');
+	textarea.scrollTop = textarea.scrollHeight;
+   	
+	var textaread = document.getElementById('textarea_idd');
+	textaread.scrollTop = textarea.scrollHeight;
     } catch (ex) {}
 }
 
