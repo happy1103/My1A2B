@@ -25,13 +25,13 @@
 	
 </head>
 <body>
-	<div align="center"  style="position: relative; top: 20px">
+	<div align="center"  style="position: relative; top: 40px">
 		<img src="img/one.png" width="80px" height="80px">
 		<img src="img/A.png" width="80px" height="80px">
 		<img src="img/two.png" width="80px" height="80px">
 		<img src="img/B.png" width="80px" height="80px">
 	</div>
-	<form name='fm' align="center" style="position: relative; top: 80px">
+	<form name='fm' align="center" style="position: relative; top: 80">
 		GUESS：
 		<input type='text' name='Guess' size='5' maxlength='4'>
 		<input id = "GO" type='button' value='GO' onClick='javascript:doGuess(document.fm)'>
@@ -60,6 +60,8 @@
 		<input type='button' value='ANSWER' onClick='javascript:doAnswer(document.fm, false)'>
 		<input id = "REPLAY" type='button' value='REPLAY' onClick='javascript:doReplay(document.fm)' disabled>
 		
+		<br><br>HISTORY：
+		<br><br><textarea name='History' rows='5' readonly></textarea>
 	</form>
 </body>
 </html>
