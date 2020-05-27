@@ -115,8 +115,8 @@ function doReplay(form) {
     gbCheck = true;
     giCount = 0;
 	form.Guess.value = "";
-    form.Hint.value = " ";
-    form.Answer.value = " ";
+    form.Hint.value = "";
+    form.Answer.value = "";
 	document.getElementById("first").setAttribute("src", "img/question-mark.png");
 	document.getElementById("second").setAttribute("src", "img/question-mark.png");
 	document.getElementById("third").setAttribute("src", "img/question-mark.png");
