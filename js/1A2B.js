@@ -81,7 +81,7 @@ function doGuess(form) {
 
     // 完全猜中時
     if (iA == 4) {
-		alert("你猜中了！Answer = " + gsAnswer);
+		alert("Great！Answer = " + gsAnswer);
         //form.Hint.value += "你猜中了！" + gsAnswer;
         gbCheck = false;
 		clearInterval(myVar);
