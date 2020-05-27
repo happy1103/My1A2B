@@ -76,7 +76,7 @@ function doGuess(form) {
     }
 
     // 猜的提示
-    var sHint = (++giCount)+" "+sNum+" "+iA+"A"+iB+"B\n";
+    var sHint = (++giCount) + " : " + sNum + " >> " + iA+"A"+iB+"B\n";
     form.Hint.value += sHint;
 
     // 完全猜中時
