@@ -89,7 +89,7 @@ function doGuess(form) {
 		$('#REPLAY').attr('disabled', false);
 		$('#GO').attr('disabled', true);
 		HistoryTime.push(timerN-1);
-		var sTime = (timerN - 1) + "秒\n" ;
+		var sTime = "總共猜了 " + giCount + " 次, " + "花了 " + (timerN - 1) + " 秒\n" ;
 		form.History.value += sTime;
 		stopFunction();
 		timerN = 0; 
